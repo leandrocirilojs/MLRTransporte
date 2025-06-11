@@ -356,7 +356,11 @@ function exportToExcel() {
 
 // Adicione o evento ao botão de exportar
 document.getElementById('export-excel').addEventListener('click', exportToExcel);
-
+// Carregar saídas do dia ao abrir a página
+const today = new Date().toISOString().split('T')[0];
+filterStartDate.value = today;
+filterEndDate.value = today;
+applyFilters();
 
     
 });
