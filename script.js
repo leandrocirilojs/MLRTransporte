@@ -278,7 +278,12 @@ const generateWhatsAppMessage = () => {
     message += `*${driver}*\n\n`;
 
     for (const [date, expensesOnDate] of Object.entries(groupedByDate)) {
-    const formattedDate = new Date(date).toLocaleDateString('pt-BR');
+
+//const formattedDate = new Date(date).toLocaleDateString('pt-BR');
+
+   const [ano, mes, dia] = date.split('-');
+const formattedDate = `${dia}/${mes}/${ano}`;
+
     message += `- Data -> ${formattedDate}\n-`;
 
         expensesOnDate.forEach((expense, index) => {
